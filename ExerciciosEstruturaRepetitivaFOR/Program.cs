@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Globalization;
 namespace ExerciciosEstruturaRepetitivaFOR
 {
     class Program
@@ -18,7 +18,7 @@ namespace ExerciciosEstruturaRepetitivaFOR
                     Console.WriteLine("Ímpar até o X: " + i);
                 }
             }
-
+            Console.WriteLine("--------------------------------------------");
             //Leia um valor inteiro N. Este valor será a quantidade de valores inteiros X que serão lidos em seguida.
             //Mostre quantos destes valores X estão dentro do intervalo[10, 20] e quantos estão fora do intervalo, mostrando
             //essas informações conforme exemplo(use a palavra "in" para dentro do intervalo, e "out" para fora do intervalo).
@@ -41,6 +41,58 @@ namespace ExerciciosEstruturaRepetitivaFOR
                 }
             }
             Console.WriteLine("Existem " + dentro + " valor(es) dentro de 10 a 20 e " + fora + " valor(es) fora!");
+            Console.WriteLine("--------------------------------------------");
+            //Leia 1 valor inteiro N, que representa o número de casos de teste que vem a seguir.
+            //Cada caso de teste consiste de 3 valores reais, cada um deles com uma casa decimal.
+            //Apresente a média ponderada para cada um destesconjuntos de 3 valores,
+            //sendo que o primeiro valor tem peso 2, o segundo valor tem peso 3 e o terceiro valor tem
+            //peso 5
+            int qtdValores = 0;
+            Console.WriteLine("Entre com a quantidade de valores para calculo de média: ");
+            qtdValores = int.Parse(Console.ReadLine());
+            for (int u = 1; u <= qtdValores; u++)
+            {
+                Console.WriteLine("Nota 1:");
+                float nota1 = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.WriteLine("Nota 2:");
+                float nota2 = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.WriteLine("Nota 3:");
+                float nota3 = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                float media = ((nota1 * 2) + (nota2 * 3) + (nota3 * 5)) / 10;
+
+                Console.WriteLine(media.ToString("F2", CultureInfo.InvariantCulture));
+
+            }
+            Console.WriteLine("--------------------------------------------");
+
+            //Fazer um programa para ler um número N.
+            //Depois leia N pares de números e mostre a divisão do primeiro
+            //pelo segundo.
+            //Se o denominador for igual a zero,
+            //mostrar a mensagem "divisao impossivel"
+            string[] vetValores;
+            Console.WriteLine("Entre com a quantidade de Pares para divisão!");
+            int Npar = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            for (int cont = 1; cont <= Npar; cont++)
+            {
+                Console.WriteLine("Entre com os valores: ");
+                vetValores = Console.ReadLine().Split(' ');
+                float numerador = float.Parse((vetValores[0]), CultureInfo.InvariantCulture);
+                float denominador = float.Parse((vetValores[1]), CultureInfo.InvariantCulture);
+                
+                if (denominador == 0)
+                {
+                    Console.WriteLine("impossivel dividir");
+                }
+                else
+                {
+                    float totDivisao = numerador / denominador;
+                    Console.WriteLine("Resultado: " + (totDivisao));
+                }
+            }
+            Console.WriteLine("--------------------------------------------");
 
         }
     }
