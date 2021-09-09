@@ -24,7 +24,7 @@ namespace ExerciciosEstruturaRepetitivaFOR
             //essas informações conforme exemplo(use a palavra "in" para dentro do intervalo, e "out" para fora do intervalo).
             int dentro = 0;
             int fora = 0;
-            Console.Write("Quantos Valores gostaria de inseerir? ");
+            Console.Write("Quantos Valores gostaria de inserir? ");
             int N = int.Parse(Console.ReadLine());
             for (int i = 1; i <= N; i++)
             {
@@ -77,11 +77,11 @@ namespace ExerciciosEstruturaRepetitivaFOR
 
             for (int cont = 1; cont <= Npar; cont++)
             {
-                Console.WriteLine("Entre com os valores: ");
+                Console.WriteLine("Entre com os 2 valores: ");
                 vetValores = Console.ReadLine().Split(' ');
                 float numerador = float.Parse((vetValores[0]), CultureInfo.InvariantCulture);
                 float denominador = float.Parse((vetValores[1]), CultureInfo.InvariantCulture);
-                
+
                 if (denominador == 0)
                 {
                     Console.WriteLine("impossivel dividir");
@@ -94,6 +94,28 @@ namespace ExerciciosEstruturaRepetitivaFOR
             }
             Console.WriteLine("--------------------------------------------");
 
+            //Ler um valor N. Calcular e escrever seu respectivo fatorial.
+            //Fatorial de N = N * (N-1) * (N-2) * (N-3) * ... * 1.
+            //Lembrando que, por definição, fatorial de 0 é 1
+            Console.WriteLine("Insira um Valor para saber seu Fatorial: ");
+            float fatorial = 1;
+            int numN = int.Parse(Console.ReadLine());
+            if (numN > 0)
+            {
+                for (int val1 = 1; val1 <= numN; val1++)
+                {
+                    fatorial = fatorial * val1;
+                }
+                Console.WriteLine("O Valor Fatorial é: "+fatorial);
+            }
+            else if (numN == 0)
+            {
+                Console.WriteLine("O Valor Fatorial é: 1");
+            }
+            else
+            {
+                Console.WriteLine("O Valor Fatorial não é possível para negativos.");
+            }
         }
     }
 }
