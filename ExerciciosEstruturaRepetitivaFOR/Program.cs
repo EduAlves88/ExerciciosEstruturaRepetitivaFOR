@@ -93,7 +93,6 @@ namespace ExerciciosEstruturaRepetitivaFOR
                 }
             }
             Console.WriteLine("--------------------------------------------");
-
             //Ler um valor N. Calcular e escrever seu respectivo fatorial.
             //Fatorial de N = N * (N-1) * (N-2) * (N-3) * ... * 1.
             //Lembrando que, por definição, fatorial de 0 é 1
@@ -106,7 +105,7 @@ namespace ExerciciosEstruturaRepetitivaFOR
                 {
                     fatorial = fatorial * val1;
                 }
-                Console.WriteLine("O Valor Fatorial é: "+fatorial);
+                Console.WriteLine("O Valor Fatorial é: " + fatorial);
             }
             else if (numN == 0)
             {
@@ -116,6 +115,22 @@ namespace ExerciciosEstruturaRepetitivaFOR
             {
                 Console.WriteLine("O Valor Fatorial não é possível para negativos.");
             }
+            Console.WriteLine("--------------------------------------------");
+            //Ler um número inteiro N e calcular todos os seus divisores.
+            Console.WriteLine("Entre com o número para divisores: ");
+            double inDivisor = double.Parse(Console.ReadLine());
+            for (int i2 = 1; i2 <= inDivisor; i2++)
+            {
+                if (inDivisor % i2 == 0)
+                {
+                    Console.WriteLine("Valores divisores: " + i2);
+                }
+            }
+            Console.WriteLine("--------------------------------------------");
+            //Fazer um programa para ler um número inteiro positivo N.
+            //O programa deve então mostrar na tela N linhas,
+            //começando de 1 até N. Para cada linha, mostrar o número da linha,
+            //depois o quadrado e o cubo do valor, conforme exemplo.
         }
     }
 }
